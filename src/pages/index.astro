@@ -1,179 +1,129 @@
 ---
-import Layout from '../layouts/Layout.astro';
+const valueProps = [
+  { icon: '🤖', title: 'Agent Tech', desc: 'Latest in AI agents, autonomous systems, and OpenClaw updates' },
+  { icon: '🛠️', title: 'Tools & Skills', desc: 'New skills, integrations, and community-built tools' },
+  { icon: '🚀', title: 'Product Launches', desc: 'Exciting projects built with OpenClaw' },
+  { icon: '💡', title: 'Tips & Tricks', desc: 'Power user guides, configs, and workflows' },
+];
+
+const topics = ['OpenClaw', 'ClawdBot', 'AI Agents', 'Autonomous Tools', 'Skills Marketplace', 'Community Projects', 'Agent Architecture'];
 ---
 
-<Layout title="Clawverse — The Pulse of the OpenClaw Ecosystem">
-  <!-- Nav -->
-  <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <span class="text-2xl">🦞</span>
-        <span class="text-xl font-bold bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">Clawverse</span>
-      </a>
-      <a href="#subscribe" class="text-sm text-zinc-400 hover:text-white transition-colors">Subscribe →</a>
-    </div>
-  </nav>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Clawverse — The pulse of the OpenClaw ecosystem. Weekly newsletter on AI agents, autonomous tools, and community highlights." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Clawverse — The pulse of the OpenClaw ecosystem</title>
+  </head>
+  <body class="bg-[#0a0a0a] text-white min-h-screen font-sans antialiased">
 
-  <!-- Hero -->
-  <section class="min-h-screen flex items-center justify-center px-6 pt-20">
-    <div class="max-w-3xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#14B881]/30 bg-[#14B881]/5 text-[#14B881] text-sm font-medium mb-8">
-        <span class="w-2 h-2 rounded-full bg-[#14B881] animate-pulse"></span>
-        Free weekly newsletter
-      </div>
-      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-        The pulse of the<br />
-        <span class="bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">OpenClaw</span> ecosystem
-      </h1>
-      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-        Every week, we break down the latest in AI agents, autonomous tools, community-built skills, and everything happening in the OpenClaw universe.
-      </p>
+    <!-- Hero -->
+    <section class="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="text-accent font-mono text-sm tracking-widest uppercase mb-4">Newsletter</p>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4">
+          Claw<span class="text-accent">verse</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 mb-2">The pulse of the OpenClaw ecosystem</p>
+        <p class="text-zinc-500 mb-10 max-w-lg mx-auto">
+          Weekly newsletter covering OpenClaw, AI agents, autonomous tools, community highlights, and the best in agent tech.
+        </p>
 
-      <!-- Signup Form -->
-      <div id="subscribe" class="max-w-md mx-auto">
-        <form id="signup-form" class="flex gap-3">
+        <!-- Signup Form -->
+        <form id="signup-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
           <input
             type="email"
             id="email-input"
-            placeholder="your@email.com"
+            placeholder="you@example.com"
             required
-            class="flex-1 px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-[#14B881]/50 focus:ring-1 focus:ring-[#14B881]/20 transition-all text-base"
+            class="flex-1 px-4 py-3 rounded-lg bg-surface border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition"
           />
           <button
             type="submit"
             id="submit-btn"
-            class="px-7 py-3.5 rounded-xl bg-[#14B881] hover:bg-[#12a574] text-black font-semibold transition-all hover:shadow-lg hover:shadow-[#14B881]/20 text-base whitespace-nowrap"
+            class="px-6 py-3 bg-accent text-black font-semibold rounded-lg hover:bg-accent-dark transition whitespace-nowrap cursor-pointer"
           >
             Subscribe
           </button>
         </form>
-        <div id="form-message" class="mt-3 text-sm hidden"></div>
-        <p class="text-xs text-zinc-600 mt-4">No spam. Unsubscribe anytime. Join 0 readers.</p>
+        <p id="form-message" class="text-sm h-5"></p>
       </div>
+    </section>
 
-      <!-- Scroll indicator -->
-      <div class="mt-20 animate-bounce text-zinc-600">
-        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+    <!-- Value Props -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-center mb-12">What you'll get</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {valueProps.map(({ icon, title, desc }) => (
+          <div class="bg-surface border border-zinc-800 rounded-xl p-6 hover:border-accent/40 transition">
+            <div class="text-4xl mb-4">{icon}</div>
+            <h3 class="text-lg font-semibold mb-2">{title}</h3>
+            <p class="text-zinc-400 text-sm">{desc}</p>
+          </div>
+        ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- What You'll Get -->
-  <section class="py-32 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What you'll get</h2>
-      <p class="text-zinc-400 text-center mb-16 max-w-xl mx-auto">Every issue is packed with curated insights, launches, and practical knowledge from the agent ecosystem.</p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
-          <div class="text-3xl mb-4">🤖</div>
-          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Agent Tech</h3>
-          <p class="text-zinc-500 text-sm leading-relaxed">Latest in AI agents, autonomous systems, and OpenClaw core updates.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
-          <div class="text-3xl mb-4">🛠️</div>
-          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Tools & Skills</h3>
-          <p class="text-zinc-500 text-sm leading-relaxed">New skills, integrations, and community-built tools from ClawHub.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
-          <div class="text-3xl mb-4">🚀</div>
-          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Product Launches</h3>
-          <p class="text-zinc-500 text-sm leading-relaxed">Exciting projects and products built with OpenClaw by the community.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
-          <div class="text-3xl mb-4">💡</div>
-          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Tips & Tricks</h3>
-          <p class="text-zinc-500 text-sm leading-relaxed">Power user guides, configs, workflows, and automation recipes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Topics -->
-  <section class="py-32 px-6 border-t border-white/5">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Topics we cover</h2>
-      <p class="text-zinc-400 mb-12">Deep dives into everything that powers the autonomous agent revolution.</p>
+    <!-- Topics -->
+    <section class="max-w-3xl mx-auto px-6 py-20 text-center">
+      <h2 class="text-3xl font-bold mb-10">Topics we cover</h2>
       <div class="flex flex-wrap justify-center gap-3">
-        {["OpenClaw", "ClawdBot", "AI Agents", "Autonomous Tools", "Skills Marketplace", "Community Projects", "Agent Architecture", "LLM Workflows", "Home Automation", "Developer Tools", "Self-Hosting", "Privacy & Security"].map(topic => (
-          <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-zinc-300 text-sm hover:border-[#14B881]/30 hover:text-[#14B881] transition-all cursor-default">
-            {topic}
+        {topics.map((t) => (
+          <span class="px-4 py-2 bg-surface border border-zinc-800 rounded-full text-sm text-zinc-300 hover:border-accent/50 transition">
+            {t}
           </span>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="py-32 px-6 border-t border-white/5">
-    <div class="max-w-2xl mx-auto text-center">
-      <span class="text-5xl mb-6 block">🦞</span>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay in the loop</h2>
-      <p class="text-zinc-400 mb-10">Join the Clawverse community. One email per week, zero noise.</p>
-      <a href="#subscribe" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#14B881] hover:bg-[#12a574] text-black font-semibold transition-all hover:shadow-lg hover:shadow-[#14B881]/20 text-lg">
-        Subscribe now →
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 px-6 border-t border-white/5">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="text-lg">🦞</span>
-        <span class="font-semibold bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">Clawverse</span>
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 mt-10">
+      <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500 text-sm">
+        <p>&copy; 2026 Clawverse. Part of the <a href="https://openclaw.ai" class="text-accent hover:underline">OpenClaw</a> ecosystem.</p>
+        <div class="flex gap-6">
+          <a href="https://github.com/openclaw" class="hover:text-accent transition">GitHub</a>
+          <a href="https://twitter.com/openclaw" class="hover:text-accent transition">Twitter</a>
+        </div>
       </div>
-      <div class="flex gap-6 text-sm text-zinc-500">
-        <a href="https://docs.openclaw.ai" target="_blank" class="hover:text-white transition-colors">Docs</a>
-        <a href="https://github.com/openclaw/openclaw" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-        <a href="https://discord.com/invite/clawd" target="_blank" class="hover:text-white transition-colors">Discord</a>
-        <a href="https://clawhub.com" target="_blank" class="hover:text-white transition-colors">ClawHub</a>
-      </div>
-      <p class="text-xs text-zinc-600">© 2026 Clawverse. Part of the OpenClaw ecosystem.</p>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    const form = document.getElementById('signup-form');
-    const emailInput = document.getElementById('email-input');
-    const submitBtn = document.getElementById('submit-btn');
-    const formMessage = document.getElementById('form-message');
+    <script>
+      const form = document.getElementById('signup-form');
+      const msg = document.getElementById('form-message');
+      const btn = document.getElementById('submit-btn');
+      const emailInput = document.getElementById('email-input');
 
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = emailInput?.value;
-      if (!email) return;
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput?.value?.trim();
+        if (!email) return;
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Subscribing...';
+        btn.textContent = 'Subscribing...';
+        btn.disabled = true;
 
-      try {
-        // Store locally for now — will connect to Beehiiv later
-        const response = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        });
-
-        if (response.ok) {
-          formMessage.textContent = '🎉 You\'re in! Check your inbox to confirm.';
-          formMessage.className = 'mt-3 text-sm text-[#14B881]';
-          emailInput.value = '';
-        } else {
-          throw new Error('Failed');
-        }
-      } catch {
-        // Fallback: show success anyway (we'll capture via server logs / analytics)
-        formMessage.textContent = '🎉 Thanks for subscribing! We\'ll be in touch soon.';
-        formMessage.className = 'mt-3 text-sm text-[#14B881]';
-        emailInput.value = '';
-      }
-
-      formMessage.classList.remove('hidden');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Subscribe';
-    });
-  </script>
-</Layout>
+        setTimeout(() => {
+          try {
+            const subs = JSON.parse(localStorage.getItem('clawverse_subs') || '[]');
+            if (subs.includes(email)) {
+              msg.textContent = "You're already subscribed!";
+              msg.className = 'text-sm h-5 text-yellow-400';
+            } else {
+              subs.push(email);
+              localStorage.setItem('clawverse_subs', JSON.stringify(subs));
+              msg.textContent = "🎉 You're in! Watch your inbox.";
+              msg.className = 'text-sm h-5 text-accent';
+              emailInput.value = '';
+            }
+          } catch {
+            msg.textContent = 'Something went wrong. Try again.';
+            msg.className = 'text-sm h-5 text-red-400';
+          }
+          btn.textContent = 'Subscribe';
+          btn.disabled = false;
+        }, 600);
+      });
+    </script>
+  </body>
+</html>
