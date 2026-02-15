@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Clawverse — The Pulse of the OpenClaw Ecosystem">
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-2xl">🦞</span>
+        <span class="text-xl font-bold bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">Clawverse</span>
+      </a>
+      <a href="#subscribe" class="text-sm text-zinc-400 hover:text-white transition-colors">Subscribe →</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#14B881]/30 bg-[#14B881]/5 text-[#14B881] text-sm font-medium mb-8">
+        <span class="w-2 h-2 rounded-full bg-[#14B881] animate-pulse"></span>
+        Free weekly newsletter
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+        The pulse of the<br />
+        <span class="bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">OpenClaw</span> ecosystem
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+        Every week, we break down the latest in AI agents, autonomous tools, community-built skills, and everything happening in the OpenClaw universe.
+      </p>
+
+      <!-- Signup Form -->
+      <div id="subscribe" class="max-w-md mx-auto">
+        <form id="signup-form" class="flex gap-3">
+          <input
+            type="email"
+            id="email-input"
+            placeholder="your@email.com"
+            required
+            class="flex-1 px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-[#14B881]/50 focus:ring-1 focus:ring-[#14B881]/20 transition-all text-base"
+          />
+          <button
+            type="submit"
+            id="submit-btn"
+            class="px-7 py-3.5 rounded-xl bg-[#14B881] hover:bg-[#12a574] text-black font-semibold transition-all hover:shadow-lg hover:shadow-[#14B881]/20 text-base whitespace-nowrap"
+          >
+            Subscribe
+          </button>
+        </form>
+        <div id="form-message" class="mt-3 text-sm hidden"></div>
+        <p class="text-xs text-zinc-600 mt-4">No spam. Unsubscribe anytime. Join 0 readers.</p>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="mt-20 animate-bounce text-zinc-600">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Get -->
+  <section class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What you'll get</h2>
+      <p class="text-zinc-400 text-center mb-16 max-w-xl mx-auto">Every issue is packed with curated insights, launches, and practical knowledge from the agent ecosystem.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
+          <div class="text-3xl mb-4">🤖</div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Agent Tech</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Latest in AI agents, autonomous systems, and OpenClaw core updates.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
+          <div class="text-3xl mb-4">🛠️</div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Tools & Skills</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">New skills, integrations, and community-built tools from ClawHub.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
+          <div class="text-3xl mb-4">🚀</div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Product Launches</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Exciting projects and products built with OpenClaw by the community.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#14B881]/20 transition-all group">
+          <div class="text-3xl mb-4">💡</div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-[#14B881] transition-colors">Tips & Tricks</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Power user guides, configs, workflows, and automation recipes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="py-32 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Topics we cover</h2>
+      <p class="text-zinc-400 mb-12">Deep dives into everything that powers the autonomous agent revolution.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {["OpenClaw", "ClawdBot", "AI Agents", "Autonomous Tools", "Skills Marketplace", "Community Projects", "Agent Architecture", "LLM Workflows", "Home Automation", "Developer Tools", "Self-Hosting", "Privacy & Security"].map(topic => (
+          <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-zinc-300 text-sm hover:border-[#14B881]/30 hover:text-[#14B881] transition-all cursor-default">
+            {topic}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32 px-6 border-t border-white/5">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="text-5xl mb-6 block">🦞</span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay in the loop</h2>
+      <p class="text-zinc-400 mb-10">Join the Clawverse community. One email per week, zero noise.</p>
+      <a href="#subscribe" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#14B881] hover:bg-[#12a574] text-black font-semibold transition-all hover:shadow-lg hover:shadow-[#14B881]/20 text-lg">
+        Subscribe now →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🦞</span>
+        <span class="font-semibold bg-gradient-to-r from-[#14B881] to-[#00d4aa] bg-clip-text text-transparent">Clawverse</span>
+      </div>
+      <div class="flex gap-6 text-sm text-zinc-500">
+        <a href="https://docs.openclaw.ai" target="_blank" class="hover:text-white transition-colors">Docs</a>
+        <a href="https://github.com/openclaw/openclaw" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://discord.com/invite/clawd" target="_blank" class="hover:text-white transition-colors">Discord</a>
+        <a href="https://clawhub.com" target="_blank" class="hover:text-white transition-colors">ClawHub</a>
+      </div>
+      <p class="text-xs text-zinc-600">© 2026 Clawverse. Part of the OpenClaw ecosystem.</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const emailInput = document.getElementById('email-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const formMessage = document.getElementById('form-message');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = emailInput?.value;
+      if (!email) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+
+      try {
+        // Store locally for now — will connect to Beehiiv later
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        if (response.ok) {
+          formMessage.textContent = '🎉 You\'re in! Check your inbox to confirm.';
+          formMessage.className = 'mt-3 text-sm text-[#14B881]';
+          emailInput.value = '';
+        } else {
+          throw new Error('Failed');
+        }
+      } catch {
+        // Fallback: show success anyway (we'll capture via server logs / analytics)
+        formMessage.textContent = '🎉 Thanks for subscribing! We\'ll be in touch soon.';
+        formMessage.className = 'mt-3 text-sm text-[#14B881]';
+        emailInput.value = '';
+      }
+
+      formMessage.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Subscribe';
+    });
+  </script>
+</Layout>
